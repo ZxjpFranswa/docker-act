@@ -14,5 +14,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+        - name: Build example1 image
+      run: docker build -f example1/Dockerfile -t my-image-example1:$(date +%s) example1
+
+    - name: Build example2 image
+      run: docker build -f example2/Dockerfile -t my-image-example2:$(date +%s) example2
